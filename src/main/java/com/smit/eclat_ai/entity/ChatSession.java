@@ -15,20 +15,21 @@ import java.time.Instant;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
-public class Project {
+public class ChatSession {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    Long id;
 
-    String name;
+    Project project;
 
-    User owner;
+    User user;
 
-    Boolean isPublic = false;
+    String title;
 
     Instant createdAt;
     Instant updatedAt;
-    Instant deletedAt;
+
+    Instant deletedAt;          //soft delete
 
 }

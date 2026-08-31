@@ -15,20 +15,22 @@ import java.time.Instant;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
-public class Project {
+public class UsageLogs {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String name;
+    User user;
+    Project project;
 
-    User owner;
+    String action;
 
-    Boolean isPublic = false;
+    Integer tokensUsed;
+    Integer durationMs;
+
+    String metaData;                //JSON of {model_used, prompt_used}
 
     Instant createdAt;
-    Instant updatedAt;
-    Instant deletedAt;
 
 }

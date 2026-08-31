@@ -1,5 +1,6 @@
 package com.smit.eclat_ai.entity;
 
+import com.smit.eclat_ai.enums.MessageRole;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,20 +16,22 @@ import java.time.Instant;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
-public class Project {
+public class ChatMessage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    String name;
+    ChatSession chatSession;
 
-    User owner;
+    String content;
 
-    Boolean isPublic = false;
+    MessageRole role;
+
+    String toolCalls;                  //JSON Array of Tools Called
+
+    Integer tokensUsed;
 
     Instant createdAt;
-    Instant updatedAt;
-    Instant deletedAt;
 
 }
