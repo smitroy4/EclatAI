@@ -22,7 +22,7 @@ public class Subscription {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    User User;
+    User user;
 
     SubscriptionStatus status;
 
